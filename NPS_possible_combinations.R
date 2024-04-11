@@ -31,7 +31,7 @@ find_nps_combinations <- function(n=100000, target_nps = 0.5, just_number = TRUE
   
   # Check for invalid inputs
   if (n < 0) stop("n must be a positive integer.")
-  if (target_nps < -1) | target_nps > 1) stop("target_nps must be between -1 and 1.")
+  if (target_nps < -1 | target_nps > 1) stop("target_nps must be between -1 and 1.")
   
   
   combinations <- list()  # Initialize a list to store valid combinations
@@ -56,4 +56,5 @@ find_nps_combinations <- function(n=100000, target_nps = 0.5, just_number = TRUE
   } else {
     return(combinations)  # Return the list of valid combinations
   }
+}
   

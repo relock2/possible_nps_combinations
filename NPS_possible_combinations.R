@@ -20,7 +20,7 @@
 #' 
 #' @export
 
-find_nps_combinations <- function(n=10000, target_nps = 0.5, just_number = TRUE) {
+find_nps_combinations <- function(n=100, target_nps = 0.5, just_number = TRUE) {
   
   # Check data types
   if (!is.numeric(n)) stop("Argument `n` must be an integer")

@@ -25,7 +25,7 @@ find_nps_combinations <- function(n=10000, target_nps = 0.5, just_number = TRUE)
   # Check data types
   if (!is.numeric(n)) stop("Argument `n` must be an integer")
   if (!is.numeric(target_nps)) stop("Argument `target_nps` must be numeric")
-  if (!is.logical(det_prop)) stop("Argument `just_number` must be either TRUE or FALSE")
+  if (!is.logical(just_number)) stop("Argument `just_number` must be either TRUE or FALSE")
   
   # Check for invalid inputs
   if (n < 0) stop("n must be a positive integer.")
@@ -57,5 +57,3 @@ find_nps_combinations <- function(n=10000, target_nps = 0.5, just_number = TRUE)
     return(combinations)  # Return the list of valid combinations
   }
 }
-}
-  

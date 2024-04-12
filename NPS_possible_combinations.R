@@ -20,12 +20,10 @@
 #' 
 #' @export
 
-
-
-find_nps_combinations <- function(n=100000, target_nps = 0.5, just_number = TRUE) {
+find_nps_combinations <- function(n=10000, target_nps = 0.5, just_number = TRUE) {
   
   # Check data types
-  if (!is.integer(n)) stop("Argument `n` must be an integer")
+  if (!is.numeric(n)) stop("Argument `n` must be an integer")
   if (!is.numeric(target_nps)) stop("Argument `target_nps` must be numeric")
   if (!is.logical(det_prop)) stop("Argument `just_number` must be either TRUE or FALSE")
   
@@ -33,6 +31,8 @@ find_nps_combinations <- function(n=100000, target_nps = 0.5, just_number = TRUE
   if (n < 0) stop("n must be a positive integer.")
   if (target_nps < -1 | target_nps > 1) stop("target_nps must be between -1 and 1.")
   
+  # Ensure n is an integer
+  n <- round(n)
   
   combinations <- list()  # Initialize a list to store valid combinations
   
@@ -56,5 +56,6 @@ find_nps_combinations <- function(n=100000, target_nps = 0.5, just_number = TRUE
   } else {
     return(combinations)  # Return the list of valid combinations
   }
+}
 }
   
